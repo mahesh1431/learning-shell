@@ -1,4 +1,7 @@
- yum install nginx -y
+amazon-linux-extras list | grep nginx
+amazon-linux-extras enable nginx1
+sudo yum clean metadata
+yum -y install nginx
  curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
  cd /usr/share/nginx/html
  rm -rf *
