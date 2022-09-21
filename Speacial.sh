@@ -4,4 +4,4 @@ echo $2  #Second argument
 echo $*  #All argument
 echo $@  #All argument
 echo $#  #No of argument
-echo $?
+echo $?  #Exist status for previous executed command
