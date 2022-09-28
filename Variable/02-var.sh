@@ -5,5 +5,5 @@ c=true
 echo value of a is = $a
 
 #Command Substitution
-Date=(date)
-echo Today Date is $Date
+DATE=($date)
+echo Today Date is $DATE
