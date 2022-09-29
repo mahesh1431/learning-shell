@@ -1,0 +1,18 @@
+---
+- hosts: web
+  tasks:
+    - name: Create .ssh folder
+      file:
+        path: "/home/ansadmin/.ssh"
+        state: "directory"
+        mode: "0700"
+
+    - name: Create authorized_key file
+      file:
+        path: "/home/ansadmin/.ssh/authorized_key"
+        state: "touch"
+        mode: "0600"
+    - name: Copy public key
+      lineinfile:
+        path: "/home/ansadmin/.ssh/authorized_key"
+        line: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbuQRPkOlLQn8H//OH6GRp39qvlWMO9ZOhZ9jKXWU7Whex3dtRCwkeiDbN8G0qh41mHpcCf7FuGnb0dFxlx/8uApF5f7RLoIOkC0YyGWj8wIktzbvUga10rxDsHGmJcRZhRBvc1Yk9OjB2cYaO/uTJieoE9++PJfawiWkJkjE+ernDL5F485iv8DulugpxWTBgX/YPtm+ETJsdno0TwnVgnROtL0w7+cj5gitf3bnr9EJBqluvPhfhODJUvkY5ictM8cY8BIi9Emp/9+MUievAPIUDIBYqKoZkRfl7QJPzEqKMpCpVuGdk9o4iooFL4bEt6iYl5K1Gxk+T4+oco4// ansadmin@ip-172-31-45-214.ap-south-1.compute.internal"
